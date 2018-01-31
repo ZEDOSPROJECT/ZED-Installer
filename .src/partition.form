@@ -1,0 +1,54 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,83,48)
+  Background = &HFFFFFF&
+  Text = ("Install ZED OS 2017")
+  Icon = Picture["icon:/32/wizard"]
+  Persistent = True
+  Resizable = False
+  { Panel2 Panel
+    MoveScaled(-1,0,84,8)
+    Background = &H007FFF&
+    { Label3 Label
+      MoveScaled(10,2,72,4)
+      Font = Font["Bold,Italic,+4"]
+      Foreground = &HFFFFFF&
+      Text = ("Where install ZED?")
+    }
+    { PictureBox2 PictureBox
+      MoveScaled(2,1,7,6)
+      Picture = Picture["icon:/32/cdrom"]
+      Stretch = True
+    }
+  }
+  { Panel1 Panel
+    MoveScaled(0,42,84,6)
+    Background = &HDFDFDF&
+    { Button1 Button
+      MoveScaled(1,1,16,4)
+      Text = ("Cancel")
+    }
+    { Button2 Button
+      MoveScaled(51,1,16,4)
+      Text = ("Back")
+    }
+    { Button3 Button
+      MoveScaled(66,1,16,4)
+      Enabled = False
+      Text = ("Next")
+    }
+  }
+  { !ListBox1 ListBox
+    MoveScaled(1,12,81,25)
+    #Public = True
+  }
+  { Label2 Label
+    MoveScaled(1,9,55,2)
+    Text = ("Select the drive to install ZED OS:")
+  }
+  { Button4 Button
+    MoveScaled(66,37.5,16,4.125)
+    Text = ("Edit")
+  }
+}

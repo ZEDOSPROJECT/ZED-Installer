@@ -1,0 +1,19 @@
+FMain
+ZED Installer
+0
+0
+0.0.1
+
+gb.image
+gb.gui.qt
+gb.form
+gb.eval
+gb.eval.highlight
+gb.form.dialog
+gb.form.editor
+gb.settings
+gb.form.mdi
+gb.form.stock
+gb.form.terminal
+gb.gui.qt.webkit
+

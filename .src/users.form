@@ -1,0 +1,87 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,83,48)
+  Background = &HFFFFFF&
+  Text = ("Install ZED OS 2017")
+  Icon = Picture["icon:/32/wizard"]
+  Persistent = True
+  Resizable = False
+  { Panel2 Panel
+    MoveScaled(-1,0,84,8)
+    Background = &H007FFF&
+    { PictureBox2 PictureBox
+      MoveScaled(2,1,7,6)
+      Picture = Picture["icon:/32/cdrom"]
+      Stretch = True
+    }
+    { Label6 Label
+      MoveScaled(10,2,72,4)
+      Font = Font["Bold,Italic,+4"]
+      Foreground = &HFFFFFF&
+      Text = ("About you")
+    }
+  }
+  { Panel1 Panel
+    MoveScaled(0,42,84,6)
+    Background = &HDFDFDF&
+    { Button1 Button
+      MoveScaled(1,1,16,4)
+      Text = ("Cancel")
+    }
+    { Button2 Button
+      MoveScaled(51,1,16,4)
+      Text = ("Back")
+    }
+    { Button3 Button
+      MoveScaled(66,1,16,4)
+      Enabled = False
+      Text = ("Next")
+    }
+  }
+  { Label2 Label
+    MoveScaled(1,10,17,4)
+    Text = ("Your Full Name:")
+    Alignment = Align.Right
+  }
+  { Label3 Label
+    MoveScaled(1,16,17,4)
+    Text = ("Username:")
+    Alignment = Align.Right
+  }
+  { Label4 Label
+    MoveScaled(1,26,17,4)
+    Text = ("Password:")
+    Alignment = Align.Right
+  }
+  { Label5 Label
+    MoveScaled(1,31,17,4)
+    Text = ("Re-type Password:")
+    Alignment = Align.Right
+  }
+  { !txt_name TextBox
+    MoveScaled(18.875,10.5,58,3)
+    #Public = True
+    Text = ("Defalut User")
+  }
+  { !txt_username TextBox
+    MoveScaled(18.75,16.75,58,3)
+    #Public = True
+    Text = ("user")
+  }
+  { !txt_password TextBox
+    MoveScaled(19,27,58,3)
+    #Public = True
+    Password = True
+  }
+  { !txt_passwordVerify TextBox
+    MoveScaled(19,32,58,3)
+    #Public = True
+    Password = True
+  }
+  { Timer1 #Timer
+    #MoveScaled(2,20)
+    Enabled = True
+    Delay = 300
+  }
+}

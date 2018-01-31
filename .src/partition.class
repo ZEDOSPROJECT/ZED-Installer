@@ -1,0 +1,91 @@
+' Gambas class file
+
+
+Public Sub Button3_Click()
+  summery.Label2.Text = "User Name: " &
+  users.txt_username.Text & "\nYour Full Name: " &
+  users.txt_name.Text & "\n\nLanguage\\Keyboard: " &
+  idioma.cmd_language.Text & "\\" & idioma.cmd_keyboard.Text & "\n\n" &
+  "Device to install OS: " & partition.ListBox1.Text
+  summery.Show()
+  Me.Hide()
+End
+
+Public Sub Button2_Click()
+
+  users.Show()
+  Me.hide()
+
+End
+
+Public Sub Button1_Click()
+
+  If Message.Question("Are you sure to quit?", "Yes", "No") == 1 Then
+    Quit
+  Endif
+
+End
+
+
+Public Sub Form_Close()
+
+  If Message.Question("Are you sure to quit?", "Yes", "No") == 1 Then
+    Quit
+  Endif
+
+End
+
+
+Public Sub Form_Open()
+  loadDrives()
+End
+
+Public Sub loadDrives()
+  
+  Dim i As Integer = 0
+  Dim result As String
+  Dim y As String
+
+  ListBox1.Clear()
+  
+  For i = 0 To 50
+    If Exist("/dev/sda" & i) Then
+      Shell "fdisk -l /dev/sda" & i & " | grep -m1 ^Disk | awk '{print $3 " " $4}' | tail -1 > /var/tmp/i" Wait
+      result = File.Load("/var/tmp/i")
+      ListBox1.Add("/dev/sda" & i & " with size of " & Left$(result, -2))
+    Endif
+  Next
+  
+  For i = 0 To 50
+    If Exist("/dev/sdb" & i) Then
+      Shell "fdisk -l /dev/sdb" & i & " | grep -m1 ^Disk | awk '{print $3 " " $4}' | tail -1 > /var/tmp/i" Wait
+      result = File.Load("/var/tmp/i")
+      ListBox1.Add("/dev/sdb" & i & " with size of " & Left$(result, -2))
+    Endif
+  Next
+  
+  For i = 0 To 50
+    If Exist("/dev/hda" & i) Then
+      Shell "fdisk -l /dev/hda" & i & " | grep -m1 ^Disk | awk '{print $3 " " $4}' | tail -1 > /var/tmp/i" Wait
+      result = File.Load("/var/tmp/i")
+      ListBox1.Add("/dev/hda" & i & " with size of " & Left$(result, -2))
+    Endif
+  Next
+  Shell "rm i"
+  
+End
+
+
+Public Sub Button4_Click()
+
+  Shell "gparted" Wait
+  loadDrives()
+
+End
+
+Public Sub ListBox1_Select()
+
+  Button3.Enabled = True
+
+End
+

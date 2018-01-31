@@ -1,0 +1,31 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,113,63)
+  Text = ("Install ZED OS 2017")
+  Icon = Picture["icon:/32/wizard"]
+  Persistent = True
+  Resizable = False
+  { Spinner1 Spinner
+    MoveScaled(0,57,6,6)
+  }
+  { Label1 Label
+    MoveScaled(7,58,24,4)
+    Font = Font["+5"]
+    Text = ("Installing . . .")
+  }
+  { WebView1 WebView
+    MoveScaled(0,0,115,57)
+    Url = "file:///home/alexandre/git/ZEDOS_2017/APPS_Source/ZEDInstaller/slideshoow/index.html"
+  }
+  { ProgressBar1 ProgressBar
+    MoveScaled(0,56,113,1)
+    Background = &HFFFFFF&
+    Label = False
+  }
+  { Timer1 #Timer
+    #MoveScaled(105,57)
+    Enabled = True
+    Delay = 100
+  }
+}

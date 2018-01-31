@@ -1,0 +1,22 @@
+' Gambas class file
+
+
+Public Sub Button3_Click()
+  users.Show
+  Me.Hide()
+End
+
+Public Sub Button2_Click()
+
+  FMain.Show()
+  Me.hide()
+
+End
+
+Public Sub Button1_Click()
+
+  If Message.Question("Are you sure to quit?", "Yes", "No") == 1 Then
+    Quit
+  Endif
+
+End

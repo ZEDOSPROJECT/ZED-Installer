@@ -1,0 +1,68 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,83,48)
+  Background = &HFFFFFF&
+  Text = ("Install ZED OS 2017")
+  Icon = Picture["icon:/32/wizard"]
+  Resizable = False
+  { Panel2 Panel
+    MoveScaled(-1,0,84,8)
+    Background = &H007FFF&
+  }
+  { Panel1 Panel
+    MoveScaled(0,42,84,6)
+    Background = &HDFDFDF&
+    { Button1 Button
+      MoveScaled(1,1,16,4)
+      Text = ("Cancel")
+    }
+    { Button2 Button
+      MoveScaled(51,1,16,4)
+      Text = ("Back")
+    }
+    { Button3 Button
+      MoveScaled(66,1,16,4)
+      Text = ("Next")
+    }
+  }
+  { Label1 Label
+    MoveScaled(8,2,72,4)
+    Font = Font["Bold,Italic,+4"]
+    Foreground = &HFFFFFF&
+    Text = ("Select your language:")
+  }
+  { Label2 Label
+    MoveScaled(2,12,24,4)
+    Text = ("Language:")
+  }
+  { Label3 Label
+    MoveScaled(2,20,24,4)
+    Text = ("Keyboard:")
+  }
+  { Label4 Label
+    MoveScaled(1,38,76,4)
+    Foreground = &HBF0000&
+    Text = ("*The language settings will be applayed after ZED OS instalation")
+    Alignment = Align.TopLeft
+  }
+  { !cmd_language ComboBox
+    MoveScaled(12,12,31,4)
+    #Public = True
+    ReadOnly = True
+    List = [("English"), ("Portuguese"), ("French")]
+    Text = ("English")
+  }
+  { !cmd_keyboard ComboBox
+    MoveScaled(12,20,31,4)
+    #Public = True
+    ReadOnly = True
+    List = [("English"), ("Portuguese"), ("French")]
+    Text = ("English")
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(1,1,7,6)
+    Picture = Picture["icon:/32/flag"]
+    Stretch = True
+  }
+}

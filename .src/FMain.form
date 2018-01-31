@@ -1,0 +1,31 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,83,48)
+  Background = &HFFFFFF&
+  Text = ("Install ZED OS 2017")
+  Icon = Picture["icon:/32/wizard"]
+  Resizable = False
+  { Panel1 Panel
+    MoveScaled(0,42,84,6)
+    Background = &HDFDFDF&
+    { Button1 Button
+      MoveScaled(1,1,16,4)
+      Text = ("Cancel")
+    }
+    { Button2 Button
+      MoveScaled(51,1,16,4)
+      Enabled = False
+      Text = ("Back")
+    }
+    { Button3 Button
+      MoveScaled(66,1,16,4)
+      Text = ("Next")
+    }
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(0,0,84,42)
+    Picture = Picture["ZED Wallpaper LOGO.jpg"]
+    Stretch = True
+  }
+}

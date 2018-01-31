@@ -1,0 +1,16 @@
+' Gambas class file
+
+
+Public Sub Button3_Click()
+  idioma.Show()
+  Me.Hide()
+
+End
+
+Public Sub Button1_Click()
+
+  If Message.Question("Are you sure to quit?", "Yes", "No") == 1 Then
+    Quit
+  Endif
+
+End

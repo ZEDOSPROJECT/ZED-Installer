@@ -1,0 +1,71 @@
+' Gambas class file
+
+
+Public Sub Button2_Click()
+
+  idioma.Show()
+  Me.hide()
+
+End
+
+Public Sub Button1_Click()
+
+  If Message.Question("Are you sure to quit?", "Yes", "No") == 1 Then
+    Quit
+  Endif
+
+End
+
+Public Sub Timer1_Timer()
+  If txt_passwordVerify.Text <> "" Then
+    If txt_passwordVerify.Length > 5 Then
+      If txt_passwordVerify.Text == txt_password.Text Then
+        txt_passwordVerify.Background = Color.Green
+        txt_password.Background = Color.Green
+        If txt_name.Text <> "" And txt_username.Text <> "" Then
+          Button3.Enabled = True
+        Else
+          Button3.Enabled = False
+        Endif
+      Else
+        txt_passwordVerify.Background = Color.Red
+        txt_password.Background = Color.Red
+        Button3.Enabled = False
+      Endif
+    Else
+      txt_passwordVerify.Background = Color.Red
+      txt_password.Background = Color.Red
+      Button3.Enabled = False
+    Endif
+  Endif
+  
+  
+
+End
+
+
+Public Sub Form_Close()
+
+  If Message.Question("Are you sure to quit?", "Yes", "No") == 1 Then
+    Quit
+  Endif
+
+End
+
+Public Sub txt_name_Change()
+  Dim username As String
+  
+  username = txt_name.Text
+  If String.InStr(username, " ") == 0 Then
+    txt_username.Text = String.Lower(username)
+  Endif
+  
+
+End
+
+Public Sub Button3_Click()
+
+  partition.Show()
+  Me.Hide
+
+End
